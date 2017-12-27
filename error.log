@@ -1,0 +1,2 @@
+[Wed Dec 27 18:40:28.948373 2017] [:error] [pid 1560:tid 1680] [client 127.0.0.1:65125] PHP Fatal error:  Cannot make static method yii\\db\\ActiveRecord::tableName() non static in class app\\models\\User in D:\\v.matv\\php\\blog-git\\www\\models\\User.php on line 5, referer: http://blog.com:100/index.php?r=site%2Flogin
+[Wed Dec 27 18:40:48.441482 2017] [:error] [pid 1560:tid 1644] [client 127.0.0.1:50611] PHP Fatal error:  Class 'app\\models\\Yii' not found in D:\\v.matv\\php\\blog-git\\www\\models\\User.php on line 76, referer: http://blog.com:100/index.php?r=site%2Flogin

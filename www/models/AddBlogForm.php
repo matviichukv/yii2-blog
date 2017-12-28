@@ -9,10 +9,11 @@ use app\models\Blog;
 class AddBlogForm extends Model {
     public $name;
     public $description;
+    public $owner_id;
 
     public function rules() {
         return [
-            [['id', 'description'], 'required']
+            [['name', 'description', 'owner_id'], 'required']
         ];
     }
 
@@ -20,6 +21,8 @@ class AddBlogForm extends Model {
         $blog = new Blog();
         $blog->name = $this->name;
         $blog->description = $this->description;
+        $blog->owner_id = $this->owner_id;
         $blog->save();
+        return true;
     }
 }

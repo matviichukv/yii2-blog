@@ -43,7 +43,10 @@ AppAsset::register($this);
                 ['label' => 'Login', 'url' => ['/site/login']]
             ) : (
                 '<li>'.
-                Html::a('Your blogs', '/blogs/all').
+                Html::a('Add blog', '/blogs/add').
+                '</li>'.
+                '<li>'.
+                Html::a('Your blogs', '/blogs/your').
                 '</li>'.
                 '<li>'
                 . Html::beginForm(['/site/logout'], 'post')

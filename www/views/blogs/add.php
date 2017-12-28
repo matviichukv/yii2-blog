@@ -21,6 +21,8 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]); ?>
 
+        <?= $form->field($model, 'owner_id')->hiddenInput()->label(false) ?>
+
         <?= $form->field($model, 'name')->textInput(['autofocus' => true]) ?>
 
         <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>

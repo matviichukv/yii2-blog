@@ -12,6 +12,6 @@ class Post extends ActiveRecord {
     }
 
     public static function getPostsByBlogId($id) {
-        return self::findAll(['blog_id' => $id]);
+        return array_reverse(self::findAll(['blog_id' => $id]));
     }
 }

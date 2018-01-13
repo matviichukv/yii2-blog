@@ -6,7 +6,7 @@
 <?php foreach($blogs as $blog):?>
 
 <tr>
-    <td><?= $blog->name ?></td>
+    <td><a href="/blogs/view?id=<?= $blog->id?>"><?= $blog->name ?></a></td>
     <td><?= $blog->description ?></td>
 </tr>
 

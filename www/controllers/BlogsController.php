@@ -7,6 +7,7 @@ use yii\web\Controller;
 use yii\web\Response;
 use app\models\AddBlogForm;
 use app\models\Blog;
+use app\models\BlogModel;
 use app\models\ViewBlog;
 use app\models\Post;
 use app\models\AddPostModel;
@@ -51,5 +52,11 @@ class BlogsController extends Controller {
         $blog->addPostModel = new AddPostModel();
         $blog->addPostModel->blog_id = $blogId;
         return $this->render('view', ['blog' => $blog]);
+    }
+
+    public function actionDelete() {
+        $blogId = Yii::$app->request->post('blog_id');
+        $model = new BlogModel();
+        $model->delete($blogId);
     }
 }

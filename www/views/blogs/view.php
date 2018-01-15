@@ -2,6 +2,8 @@
     use yii\helpers\Html;
     use yii\bootstrap\ActiveForm;
     use app\models\AddPostModel;
+    use app\models\Post;
+    use app\models\Blog;
 ?>
 
 <h2><?= $blog->blog->name ?></h2>
@@ -29,6 +31,7 @@
         <td><?= $post->content?></td>
         <td><?= $post->date?></td>
         <td><button class="btn like-btn" data-post="<?= $post->id ?>">Like</button></td>
+        <?php if($blog->blog->owner_id == Yii::$app->user->identity->getId()) { echo "<td><button class='btn btn-danger btn-delete' data-post='{$post->id}'>Delete</button></td>"; }?>
     </tr>   
 <?php endforeach;?>
 </table>
@@ -67,6 +70,23 @@ $(function() {
                 method: 'POST',
                 success: function(result, status) {
                     $(event.target).html('Like: ' + result);
+                }
+            }
+        );
+    });
+
+    $('.btn-delete').on('click', function(event) {
+        
+        $.ajax(
+            {
+                url: '/posts/delete',
+                data: {
+                    'post_id': event.target['dataset']['post'],
+                    'user_id': <?= Yii::$app->user->identity->getId();?>
+                },
+                method: 'POST',
+                success: function(result, status) {
+                    $(event.target).parents('tr').remove();
                 }
             }
         );

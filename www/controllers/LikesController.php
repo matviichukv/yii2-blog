@@ -22,4 +22,6 @@ class LikesController extends Controller {
         $model->post_id = Yii::$app->request->post('post_id');
         return $model->getLikes();
     }
+
+    
 }

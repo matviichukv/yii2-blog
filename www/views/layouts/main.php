@@ -68,7 +68,7 @@ AppAsset::register($this);
         ]) ?>
         <?= Alert::widget() ?>
         <?= $content ?>
-    </div>
+        </div>
 </div>
 
 <footer class="footer">

@@ -26,4 +26,6 @@ class LikeModel extends Model {
     public function getLikes() {
         return count(Like::findAll(['post_id' => $this->post_id]));
     }
+
+    
 }
